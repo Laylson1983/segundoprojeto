@@ -1,0 +1,20 @@
+<section>
+  <h1>cadastre seus dados</h1>
+  <form>
+    <input type="text" placeholder="nome..." #nome>
+    <input type="password" placeholder="senha..." #senha>
+    <p>data de nascimento</p>
+    <input type="date" #dataNascimento>
+    <br>
+    <input type="button" value="cadastrar" (click)="setUsuario(nome.value, senha.value, dataNascimento.value)">
+
+  </form>
+  <div class="lista">
+    <h2>Lista de usuário cadastrados</h2>
+    <div *ngFor="let user of usuarios">
+      <p>{{user.nome}}</p>
+    <p>{{user.senha}}</p>
+    <p>{{user.dataNascimento}}</p>
+    </div>
+  </div>
+</section>
